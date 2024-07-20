@@ -6,13 +6,13 @@ const navMenuEl = document.getElementById('navMenu');
 const currentYearEl = document.getElementById('currentYear');
 const morePostsBtn = document.getElementById('morePostsBtn');
 const selectedPostContentEl = document.getElementById('selectedPostContent');
-const threeRecentPostsEl = document.getElementById('threeRecentPosts')
+const threeRecentPostsEl = document.getElementById('threeRecentPosts');
 
 let limitedContent = '';
 let mostRecentPost = '';
 
 document.getElementById('mobileMenu').addEventListener('click', function(){
-    displayMenu()
+    displayMenu();
 });
 
 if (morePostsBtn){
@@ -34,10 +34,14 @@ if(selectedPostContentEl){
     renderThreePosts(localStorage.getItem('selectedPost'));
 }
 
+postsEl.addEventListener('click', function(event){
+    storeSelectedPostId(event);
+    loadPostPage();
+})
+
 // Display the most recent post at the top header section
 if (heroHeaderEl){
     Math.max.apply(Math, postsArr.map(function(post){
-        console.log(post)
         heroHeaderEl.style.backgroundImage = `url(${post.image})`;
         heroHeaderEl.dataset.postid = post.id;
         if (post.content.length > 700){
@@ -69,11 +73,11 @@ if (postsEl){
                     limitedContent = post.content;
                 }
                 postCount++;
-                postsEl.innerHTML += `<article class="post">
-                                        <img src="${post.image}" alt="${post.alt}" class="post-img" />
-                                        <div class="post-date">${post.date}</div>
-                                        <h3 class="post-title">${post.title}</h3>
-                                        <p class="post-content">${limitedContent}</p>
+                postsEl.innerHTML += `<article class="post" data-postid="${post.id}">
+                                        <img src="${post.image}" alt="${post.alt}" class="post-img" data-postid="${post.id}" />
+                                        <div class="post-date" data-postid="${post.id}">${post.date}</div>
+                                        <h3 class="post-title" data-postid="${post.id}">${post.title}</h3>
+                                        <p class="post-content" data-postid="${post.id}">${limitedContent}</p>
                                     </article>`;
             }
         }
@@ -90,11 +94,11 @@ function displayAllPosts(){
             } else {
                 limitedContent = post.content;
             }
-            postsEl.innerHTML += `<article class="post">
-                                    <img src="${post.image}" alt="${post.alt}" class="post-img" />
-                                    <div class="post-date">${post.date}</div>
-                                    <h3 class="post-title">${post.title}</h3>
-                                    <p class="post-content">${limitedContent}</p>
+            postsEl.innerHTML += `<article class="post" data-postid="${post.id}">
+                                    <img src="${post.image}" alt="${post.alt}" class="post-img" data-postid="${post.id}" />
+                                    <div class="post-date" data-postid="${post.id}">${post.date}</div>
+                                    <h3 class="post-title" data-postid="${post.id}">${post.title}</h3>
+                                    <p class="post-content" data-postid="${post.id}">${limitedContent}</p>
                                 </article>`;
         }
     })
@@ -146,11 +150,11 @@ function renderThreePosts(selectedPostId){
                     limitedContent = post.content;
                 }
                 postCount++;
-                threeRecentPostsEl.innerHTML += `<article class="post recent-post">
-                                                    <img src="${post.image}" alt="${post.alt}" class="post-img" />
-                                                    <div class="post-date">${post.date}</div>
-                                                    <h3 class="post-title">${post.title}</h3>
-                                                    <p class="post-content">${limitedContent}</p>
+                threeRecentPostsEl.innerHTML += `<article class="post recent-post" data-postid="${post.id}">
+                                                    <img src="${post.image}" alt="${post.alt}" class="post-img" data-postid="${post.id}" />
+                                                    <div class="post-date" data-postid="${post.id}">${post.date}</div>
+                                                    <h3 class="post-title" data-postid="${post.id}">${post.title}</h3>
+                                                    <p class="post-content" data-postid="${post.id}">${limitedContent}</p>
                                                 </article>`
             }
         }
