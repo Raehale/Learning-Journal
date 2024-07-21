@@ -7,6 +7,7 @@ const currentYearEl = document.getElementById('currentYear');
 const morePostsBtn = document.getElementById('morePostsBtn');
 const selectedPostContentEl = document.getElementById('selectedPostContent');
 const threeRecentPostsEl = document.getElementById('threeRecentPosts');
+const aboutBtn = document.getElementById('about');
 
 let limitedContent = '';
 let mostRecentPost = '';
@@ -34,11 +35,16 @@ if(selectedPostContentEl){
     renderThreePosts(localStorage.getItem('selectedPost'));
 }
 
-postsEl.addEventListener('click', function(event){
-    storeSelectedPostId(event);
-    loadPostPage();
-})
+if(postsEl){
+    postsEl.addEventListener('click', function(event){
+        storeSelectedPostId(event);
+        loadPostPage();
+    })
+}
 
+if (threeRecentPostsEl){
+    renderThreeRecentPosts();
+}
 // Display the most recent post at the top header section
 if (heroHeaderEl){
     Math.max.apply(Math, postsArr.map(function(post){
@@ -110,8 +116,8 @@ function loadPostPage(){
 }
 
 //Stores the selected posts id
-let selectedPostArr = [];
 function storeSelectedPostId(event){
+    let selectedPostArr = [];
     let currentPostId = event.target.dataset.postid;
     return selectedPostArr = postsArr.map(function(selectedPost){
         if (selectedPost.id === currentPostId){
@@ -155,8 +161,32 @@ function renderThreePosts(selectedPostId){
                                                     <div class="post-date" data-postid="${post.id}">${post.date}</div>
                                                     <h3 class="post-title" data-postid="${post.id}">${post.title}</h3>
                                                     <p class="post-content" data-postid="${post.id}">${limitedContent}</p>
-                                                </article>`
+                                                </article>`;
             }
+        }
+    })
+}
+
+//
+function renderThreeRecentPosts() {
+    let postCount = 1;
+    threeRecentPostsEl.innerHTML = '';
+    postsArr.slice().reverse().forEach(function(post){
+        if (postCount >= 4){
+            return;
+        }else{
+                if (post.content.length > 500){
+                    limitedContent = (post.content).slice(0, 500) + '...';
+                } else {
+                    limitedContent = post.content;
+                }
+                postCount++;
+                threeRecentPostsEl.innerHTML += `<article class="post recent-post" data-postid="${post.id}">
+                                                    <img src="${post.image}" alt="${post.alt}" class="post-img" data-postid="${post.id}" />
+                                                    <div class="post-date" data-postid="${post.id}">${post.date}</div>
+                                                    <h3 class="post-title" data-postid="${post.id}">${post.title}</h3>
+                                                    <p class="post-content" data-postid="${post.id}">${limitedContent}</p>
+                                                </article>`;
         }
     })
 }

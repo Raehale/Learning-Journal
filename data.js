@@ -48,11 +48,11 @@ export const postsArr = [
         id: "6",
     },
     {
-        date: "July 16, 2024",
-        title: "Back to it",
-        content: "I have been coding I swear, I code so much. I'm so tired. At least I got back to this before it had been a whole month! Small wins! Now I will have a platform for this though. I am making a new site, it's called Learning Journal. I am supposed to have a bunch of posts on it, and since I want it to be unique, I will write the posts. Coding has been good. I got pretty depressed for a while there, but luckily my coding buddy, Fadumo, kept me in line and I coded every day. Every. Single. Day. Which is a good thing, but I won't lie, I miss my free time. That's ok, it was actually pretty fun coding last night. I was just learning but I finished a module and am ending it with this solo project. Things are looking up, go team!!",
-        image: "./images/awmleer-I--person-at-laptop.jpg",
-        alt: "A man sitting in the dark on a laptop.",
+        date: "July 20, 2024",
+        title: "Javascript Reads Down",
+        content: "The home page is broken for some reason and I don't know how to change the URLs for pages which feels like something I should know how to do by now! So today I will fix the home page, which seems to be an issue with a piece of code not running that shouldn't run on that page so I just have to stop it from running on that page. I'd also like to organize all the code by page, but that could create issues with the code that is used more than once. AFter I fix that, I want to find out how to give the pages better urls than index.html. I imagine that'll come in handy to know some day. Then I want to finish the about me page. The code that's breaking the home page is what I want to run on the about me page, but it runs before the page is loaded then when the page is loaded it disapears. I think it's because I have it running after someone clicks the link button. I think it'll fix both issues if I run the function within an if statement saying if an element that is on the about page exists, run this code. Then I will move on to the portfolio page. I'm going to go through my repos (Currently 21) and take screenshots and store all the information in an array. I want to link to their netlify sites too. I think it'll be pretty straight forward. If I have any time left I will submit my journal (I might wait until I don't have any placeholder info) and begin the advanced javascript course I said I'd test.",
+        image: "./images/dylan-gillis-laptop-on-table.jpg",
+        alt: "A laptop sitting on a octogonal wooden table in the dark with a cacti in front of it food and a cup to it's left and a bottle to it's right.",
         id: "7",
     },
     {
