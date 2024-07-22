@@ -1,4 +1,5 @@
 import { postsArr } from "./data.js";
+import { projectsArr } from "./projects.js";
 
 const heroHeaderEl = document.getElementById('heroHeader');
 const postsEl = document.getElementById('posts');
@@ -7,7 +8,7 @@ const currentYearEl = document.getElementById('currentYear');
 const morePostsBtn = document.getElementById('morePostsBtn');
 const selectedPostContentEl = document.getElementById('selectedPostContent');
 const threeRecentPostsEl = document.getElementById('threeRecentPosts');
-const aboutBtn = document.getElementById('about');
+const portfolioEl = document.getElementById('portfolioSection');
 
 let limitedContent = '';
 let mostRecentPost = '';
@@ -42,8 +43,19 @@ if(postsEl){
     })
 }
 
+if(threeRecentPostsEl){
+    threeRecentPostsEl.addEventListener('click', function(event){
+        storeSelectedPostId(event);
+        loadPostPage();
+    })
+}
+
 if (threeRecentPostsEl){
-    renderThreeRecentPosts();
+    renderThreePosts(0);
+}
+
+if (portfolioEl){
+    renderPortfolio();
 }
 // Display the most recent post at the top header section
 if (heroHeaderEl){
@@ -146,10 +158,10 @@ function renderThreePosts(selectedPostId){
     let postCount = 1;
     threeRecentPostsEl.innerHTML = '';
     postsArr.slice().reverse().forEach(function(post){
-        if (postCount >= 4){
+        if (postCount > 3){
             return;
         }else{
-            if (post.id != selectedPostId){
+            if (post.id !== selectedPostId){
                 if (post.content.length > 500){
                     limitedContent = (post.content).slice(0, 500) + '...';
                 } else {
@@ -167,27 +179,26 @@ function renderThreePosts(selectedPostId){
     })
 }
 
-//
-function renderThreeRecentPosts() {
-    let postCount = 1;
-    threeRecentPostsEl.innerHTML = '';
-    postsArr.slice().reverse().forEach(function(post){
-        if (postCount >= 4){
-            return;
-        }else{
-                if (post.content.length > 500){
-                    limitedContent = (post.content).slice(0, 500) + '...';
-                } else {
-                    limitedContent = post.content;
-                }
-                postCount++;
-                threeRecentPostsEl.innerHTML += `<article class="post recent-post" data-postid="${post.id}">
-                                                    <img src="${post.image}" alt="${post.alt}" class="post-img" data-postid="${post.id}" />
-                                                    <div class="post-date" data-postid="${post.id}">${post.date}</div>
-                                                    <h3 class="post-title" data-postid="${post.id}">${post.title}</h3>
-                                                    <p class="post-content" data-postid="${post.id}">${limitedContent}</p>
-                                                </article>`;
-        }
+//Renders the portfolio HTML and add it to the portfolio element
+function renderPortfolio(){
+    projectsArr.slice().reverse().forEach(function(project){
+        let htmlTags = [];
+        htmlTags = (project.tags).map(function(tag){
+            return `<span class="${tag.toLowerCase()}-tag tag">${tag}</span>`
+        })
+
+        // htmlTags = (project.tags).map((tag) => return `<div class="`)
+        portfolioEl.innerHTML += `<div class="portfolio-item ${project.size.join(' ')}" style="background-image=${project.screenshot}">
+                                    <a href="${project.link}" target="_blank" alt="The site for ${project.name}" class="portfolio-image">
+                                        <img src="${project.screenshot}" alt="${project.description}" />
+                                    </a>
+                                    <a href="${project.github} target="_blank" alt="The github repo for ${project.name}" class="project-github">
+                                        Github Repo for ${project.name}
+                                    </a>
+                                    <div class="project-tags">
+                                        ${htmlTags.join('')}
+                                    </div>
+                                </div>`;
     })
 }
 
