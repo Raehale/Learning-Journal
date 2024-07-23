@@ -1,6 +1,6 @@
-import { postsArr } from "./data.js";
-import { projectsArr } from "./projects.js";
+import { postsArr, projectsArr } from "./data.js";
 
+const navEl = document.getElementById('pageHeader')
 const heroHeaderEl = document.getElementById('heroHeader');
 const postsEl = document.getElementById('posts');
 const navMenuEl = document.getElementById('navMenu');
@@ -13,52 +13,105 @@ const portfolioEl = document.getElementById('portfolioSection');
 let limitedContent = '';
 let mostRecentPost = '';
 
+/****NAV */
+renderNavContent();
+/****MENU */
+/**When hamburger menu is clicked menu display is toggled */
 document.getElementById('mobileMenu').addEventListener('click', function(){
-    displayMenu();
+    menuDisplay();
 });
 
-if (morePostsBtn){
-    morePostsBtn.addEventListener('click', function(){
-        displayAllPosts();
-        morePostsBtn.style.display = 'none';
-    })
-}
+/****HOME PAGE */
+if (window.location.pathname != '/about.html' && window.location.pathname != '/portfolio.html' && window.location.pathname != '/post.html') {
+    /**creates the header element */
+    renderHeroHeader();
 
-if (heroHeaderEl){
+    /**creates the six most recent posts, excluding the most recent one */
+    renderSixRecentPosts();
+
+    /**When header element is clicked post id is stored and posts page is loaded */
     heroHeaderEl.addEventListener('click', function(event){
         storeSelectedPostId(event);
         loadPostPage();
-    })
-}
+    });
 
-if(selectedPostContentEl){
-    renderSelectedPost(localStorage.getItem('selectedPost'));
-    renderThreePosts(localStorage.getItem('selectedPost'));
-}
-
-if(postsEl){
+    /**When a post is clicked the post id is stored and the posts page is loaded */
     postsEl.addEventListener('click', function(event){
         storeSelectedPostId(event);
         loadPostPage();
-    })
+    });
+
+    /**When View More button is clicked all posts display and button is hidden */
+    morePostsBtn.addEventListener('click', function(){
+        displayAllPosts();
+        morePostsBtn.style.display = 'none';
+    });
 }
 
-if(threeRecentPostsEl){
-    threeRecentPostsEl.addEventListener('click', function(event){
-        storeSelectedPostId(event);
-        loadPostPage();
-    })
+/****POST PAGE */
+if (window.location.pathname == '/post.html'){
+    /**displays the stored selected posts content and renders the three most recent posts excluding the selected post */
+    if(selectedPostContentEl){
+        renderSelectedPost(localStorage.getItem('selectedPost'));
+        renderThreePosts(localStorage.getItem('selectedPost'));
+    }
 }
 
-if (window.location.pathname == '/about.html' || window.location.pathname == '/portfolio.html'){
-    renderThreePosts(0);
-}
-
-if (portfolioEl){
+/****PORTFOLIO PAGE */
+if (window.location.pathname == '/portfolio.html'){
+    /**creates the portfolio elements */
     renderPortfolio();
 }
+
+/**NOT HOME PAGE */
+if (window.location.pathname == '/about.html' || window.location.pathname == '/portfolio.html' || window.location.pathname == '/post.html'){
+    /**When a recent post is clicked it stores the selected posts id and loads the posts content */
+    if(threeRecentPostsEl){
+        threeRecentPostsEl.addEventListener('click', function(event){
+            storeSelectedPostId(event);
+            loadPostPage();
+        })
+    }
+
+    /**displays the three most recent posts excluding the one selected, if one was selected */
+    if (window.location.pathname == '/about.html' || window.location.pathname == '/portfolio.html'){
+        renderThreePosts(0);
+    }
+}
+
+/****NAV */
+function renderNavContent(){
+    navEl.innerHTML = `<a href="./index.html" class="site-title">
+                        <img src="./images/comment-solid.png" class="logo-img" alt="black comment bubble icon with a white curved line near the bottom right." />
+                        <span class="logo-title">My learning journal</span>
+                    </a>
+                    <nav>
+                        <ul class="menu-nav" id="navMenu">
+                            <li><a href="./index.html" id="home">Home</a></li>
+                            <li><a href="./about.html" id="about">About Me</a></li>
+                            <li><a href="./portfolio.html" id="portfolio">Portfolio</a></li>
+                        </ul>
+                        <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+                    </nav>`;
+}
+
+/****MENU */
+//Show menu when hamburger menu is clicked
+function menuDisplay() {
+    if (navMenuEl.style.display === 'flex'){
+        navMenuEl.style.display = 'none';
+    } else {
+        navMenuEl.style.display = 'flex';
+    }
+}
+
+/****FOOTER */
+//Gets the current year for the footer
+currentYearEl.innerHTML = new Date().getFullYear();
+
+/****HOME PAGE */
 // Display the most recent post at the top header section
-if (heroHeaderEl){
+function renderHeroHeader(){
     Math.max.apply(Math, postsArr.map(function(post){
         heroHeaderEl.style.backgroundImage = `url(${post.image})`;
         heroHeaderEl.dataset.postid = post.id;
@@ -78,7 +131,7 @@ if (heroHeaderEl){
 }
 
 // Display all posts except the most recent from most to least recent
-if (postsEl){
+function renderSixRecentPosts(){
     let postCount = 1;
     postsArr.slice().reverse().forEach(function(post){
         if (postCount >= 7){
@@ -122,6 +175,7 @@ function displayAllPosts(){
     })
 }
 
+/****POSTS PAGE */
 //Directs the user to the posts page
 function loadPostPage(){
     document.location.href = '/post.html';
@@ -133,7 +187,6 @@ function storeSelectedPostId(event){
     let currentPostId = event.target.dataset.postid;
     return selectedPostArr = postsArr.map(function(selectedPost){
         if (selectedPost.id === currentPostId){
-            // return selectedPost;
             localStorage.setItem('selectedPost', `${selectedPost.id}`)
         }
     })
@@ -145,7 +198,7 @@ function renderSelectedPost(selectedPostId){
         if (post.id === selectedPostId){
             selectedPostContentEl.innerHTML = `<div class="selected-post">
                                                     <div class="selected-post-date">${post.date}</div>
-                                                    <h2 class="selected-post-title">${post.title}</h2>
+                                                    <h2 class="selected-post-title title">${post.title}</h2>
                                                     <img src="${post.image}" alt="${post.alt}" class="selected-post-img" />
                                                     <p class="selected-post-content">${post.content}</a>
                                                 </div>`;
@@ -181,15 +234,14 @@ function renderThreePosts(selectedPostId){
     })
 }
 
+/****PORTFOLIO */
 //Renders the portfolio HTML and add it to the portfolio element
 function renderPortfolio(){
     projectsArr.slice().reverse().forEach(function(project){
         let htmlTags = [];
         htmlTags = (project.tags).map(function(tag){
-            return `<span class="${tag.toLowerCase()}-tag tag">${tag}</span>`
-        })
-
-        // htmlTags = (project.tags).map((tag) => return `<div class="`)
+            return `<span class="${tag.toLowerCase()}-tag tag">${tag}</span>`;
+        });
         portfolioEl.innerHTML += `<article class="portfolio-item ${project.size}" style="background-image=${project.screenshot}">
                                     <img src="${project.screenshot}" alt="${project.description}" class="portfolio-image" />
                                     <div class="portfolio-description">
@@ -199,7 +251,7 @@ function renderPortfolio(){
                                         </div>
                                         <div class="portfolio-body">
                                             <p class="post-content">${project.description}</p>
-                                            <a href="${project.github} target="_blank" alt="The github repository for ${project.name}" class="project-github">
+                                            <a href="${project.github}" target="_blank" alt="The github repository for ${project.name}" class="project-github">
                                                 Github Repository for ${project.name}
                                             </a>
                                             <div class="project-tags">
@@ -208,17 +260,5 @@ function renderPortfolio(){
                                         </div>
                                     </div>
                                 </article>`;
-    })
+    });
 }
-
-//Show menu when hamburger menu is clicked
-function displayMenu() {
-    if (navMenuEl.style.display === 'flex'){
-        navMenuEl.style.display = 'none';
-    } else {
-        navMenuEl.style.display = 'flex';
-    }
-}
-
-//Gets the current year for the footer
-currentYearEl.innerHTML = new Date().getFullYear();
