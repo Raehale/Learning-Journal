@@ -7,7 +7,7 @@ export const projectsArr = [
         description: "An app for a user to count how many rats they see each day.",
         id: 1,
         tags: ["CSS", "HTML", "Javascript", "App"],
-        size: ["wide"],
+        size: "wide",
         date: "May 5, 2024",
     },
     {
@@ -18,7 +18,7 @@ export const projectsArr = [
         description: "A small business card sized site displaying my information.",
         id: 11,
         tags: ["CSS", "HTML", "Website"],
-        size: ["wide"],
+        size: "wide",
         date: "May 6, 2024",
     },
     {
@@ -29,7 +29,7 @@ export const projectsArr = [
         description: "A website displaying birthday GIFts for my rats.",
         id: 2,
         tags: ["CSS", "HTML", "Website"],
-        size: ["normal"],
+        size: "normal",
         date: "May 7, 2024",
     },
     {
@@ -40,7 +40,7 @@ export const projectsArr = [
         description: "A website advertising my home town.",
         id: 3,
         tags: ["CSS", "HTML", "Website"],
-        size: ["wide"],
+        size: "wide",
         date: "May 9, 2024",
     },
     {
@@ -51,7 +51,7 @@ export const projectsArr = [
         description: "An app that tracks the scores of two teams.",
         id: 4,
         tags: ["CSS", "HTML", "Javascript", "App"],
-        size: ["box"],
+        size: "box",
         date: "May 15, 2024",
     },
     {
@@ -62,7 +62,7 @@ export const projectsArr = [
         description: "An app that randomly generates a password.",
         id: 13,
         tags: ["CSS", "HTML", "Javascript", "App"],
-        size: ["box"],
+        size: "box",
         date: "May 19, 2024",
     },
     {
@@ -73,7 +73,7 @@ export const projectsArr = [
         description: "A google extention that creates a list of sites you add to it to review later.",
         id: 14,
         tags: ["CSS", "HTML", "Javascript", "Extension"],
-        size: ["wide"],
+        size: "wide",
         date: "May 23, 2024",
     },
     {
@@ -84,7 +84,7 @@ export const projectsArr = [
         description: "An app that converts Metric and Imperial units.",
         id: 12,
         tags: ["CSS", "HTML", "Javascript", "App"],
-        size: ["wide"],
+        size: "wide",
         date: "May 24, 2024",
     },
     {
@@ -95,7 +95,7 @@ export const projectsArr = [
         description: "A website displaying all my notes.",
         id: 6,
         tags: ["CSS", "HTML", "Javascript", "Website"],
-        size: ["tall"],
+        size: "tall",
         date: "May 26, 2024",
     },
     {
@@ -106,7 +106,7 @@ export const projectsArr = [
         description: "An app using firebase to create and manage a list. It will have multiple list options.",
         id: 7,
         tags: ["CSS", "HTML", "Javascript", "WIP", "App"],
-        size: ["tall"],
+        size: "tall",
         date: "June 1, 2024",
     },
     {
@@ -117,7 +117,7 @@ export const projectsArr = [
         description: "A firebase app where users can write an endorsement to another user.",
         id: 10,
         tags: ["CSS", "HTML", "Javascript", "App"],
-        size: ["box"],
+        size: "box",
         date: "June 7, 2024",
     },
     {
@@ -128,7 +128,7 @@ export const projectsArr = [
         description: "A site showing the old version of instagram.",
         id: 9,
         tags: ["CSS", "HTML", "Javascript", "WIP", "App"],
-        size: ["tall"],
+        size: "tall",
         date: "June 9, 2024",
     },
     {
@@ -139,7 +139,7 @@ export const projectsArr = [
         description: "An app you can upload images of your pets and it will randomly generate a pet from the one you selected.",
         id: 8,
         tags: ["CSS", "HTML", "Javascript", "WIP", "App"],
-        size: ["box"],
+        size: "box",
         date: "June 19, 2024",
     },
     {
@@ -150,7 +150,7 @@ export const projectsArr = [
         description: "A copy of twitter with a login ability.",
         id: 5,
         tags: ["CSS", "HTML", "Javascript", "WIP", "App"],
-        size: ["normal"],
+        size: "normal",
         date: "June 22, 2024",
     },
     {
@@ -161,7 +161,7 @@ export const projectsArr = [
         description: "An app for ordering from a restaurant, paying, and leaving a review.",
         id: 16,
         tags: ["CSS", "HTML", "Javascript", "App"],
-        size: ["normal"],
+        size: "normal",
         date: "June 29, 2024",
     },
     {
@@ -172,7 +172,7 @@ export const projectsArr = [
         description: "A website made mobile first giving an award for best fictional rat.",
         id: 15,
         tags: ["CSS", "HTML", "Website"],
-        size: ["normal"],
+        size: "normal",
         date: "July 13, 2024",
     },
     {
@@ -183,7 +183,7 @@ export const projectsArr = [
         description: "It will work as a site that adds a random rat image to an image you upload.",
         id: 17,
         tags: ["CSS", "HTML", "WIP", "App"],
-        size: ["wide"],
+        size: "wide",
         date: "July 15, 2024",
     },
     {
@@ -194,7 +194,7 @@ export const projectsArr = [
         description: "A website displaying fake articles about rats to display a grid layout.",
         id: 18,
         tags: ["CSS", "HTML", "Website"],
-        size: ["wide"],
+        size: "wide",
         date: "July 15, 2024",
     },
     {
@@ -205,7 +205,7 @@ export const projectsArr = [
         description: "This is a group project done with two others, Fadumo and Guiseppe, that displays a bank statement page.",
         id: 20,
         tags: ["CSS", "HTML", "Javascript", "Website", "WIP", "Group"],
-        size: ["wide"],
+        size: "wide",
         date: "July 15, 2024",
     },
     {
@@ -216,7 +216,7 @@ export const projectsArr = [
         description: "A simple website to show my journey as a front end developer.",
         id: 19,
         tags: ["CSS", "HTML", "Javascript", "Website"],
-        size: ["normal"],
+        size: "normal",
         date: "July 19, 2024",
     },
     // {

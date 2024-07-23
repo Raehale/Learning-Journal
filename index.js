@@ -50,7 +50,7 @@ if(threeRecentPostsEl){
     })
 }
 
-if (threeRecentPostsEl){
+if (window.location.pathname == '/about.html' || window.location.pathname == '/portfolio.html'){
     renderThreePosts(0);
 }
 
@@ -158,10 +158,12 @@ function renderThreePosts(selectedPostId){
     let postCount = 1;
     threeRecentPostsEl.innerHTML = '';
     postsArr.slice().reverse().forEach(function(post){
-        if (postCount > 3){
+        if (post.id === selectedPostId) {
             return;
-        }else{
-            if (post.id !== selectedPostId){
+        } else {
+            if (postCount > 3){
+                return;
+            }else{
                 if (post.content.length > 500){
                     limitedContent = (post.content).slice(0, 500) + '...';
                 } else {
@@ -188,17 +190,24 @@ function renderPortfolio(){
         })
 
         // htmlTags = (project.tags).map((tag) => return `<div class="`)
-        portfolioEl.innerHTML += `<div class="portfolio-item ${project.size.join(' ')}" style="background-image=${project.screenshot}">
-                                    <a href="${project.link}" target="_blank" alt="The site for ${project.name}" class="portfolio-image">
-                                        <img src="${project.screenshot}" alt="${project.description}" />
-                                    </a>
-                                    <a href="${project.github} target="_blank" alt="The github repo for ${project.name}" class="project-github">
-                                        Github Repo for ${project.name}
-                                    </a>
-                                    <div class="project-tags">
-                                        ${htmlTags.join('')}
+        portfolioEl.innerHTML += `<article class="portfolio-item ${project.size}" style="background-image=${project.screenshot}">
+                                    <img src="${project.screenshot}" alt="${project.description}" class="portfolio-image" />
+                                    <div class="portfolio-description">
+                                        <div class="portfolio-header">
+                                            <div class="post-date">${project.date}</div>
+                                            <a href="${project.link}" target="_blank" alt="The ${project.name} Site" class="post-title">${project.name}</a>
+                                        </div>
+                                        <div class="portfolio-body">
+                                            <p class="post-content">${project.description}</p>
+                                            <a href="${project.github} target="_blank" alt="The github repository for ${project.name}" class="project-github">
+                                                Github Repository for ${project.name}
+                                            </a>
+                                            <div class="project-tags">
+                                                ${htmlTags.join('')}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>`;
+                                </article>`;
     })
 }
 

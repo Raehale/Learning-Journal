@@ -64,11 +64,11 @@ export const postsArr = [
         id: "8",
     },
     {
-        date: "July 16, 2024",
-        title: "Last One",
-        content: "I have been coding I swear, I code so much. I'm so tired. At least I got back to this before it had been a whole month! Small wins! Now I will have a platform for this though. I am making a new site, it's called Learning Journal. I am supposed to have a bunch of posts on it, and since I want it to be unique, I will write the posts. Coding has been good. I got pretty depressed for a while there, but luckily my coding buddy, Fadumo, kept me in line and I coded every day. Every. Single. Day. Which is a good thing, but I won't lie, I miss my free time. That's ok, it was actually pretty fun coding last night. I was just learning but I finished a module and am ending it with this solo project. Things are looking up, go team!!",
-        image: "./images/awmleer-I--person-at-laptop.jpg",
-        alt: "A man sitting in the dark on a laptop.",
+        date: "July 23, 2024",
+        title: "Cleaning Up",
+        content: "I am done! Now all I need to do is clean up my mess. This project is so messy! I need to merge my data files into data.js, and update the references, be sure to import/export the portfolio array from data.js instead of projects.js. Then I need to separate the pages js files. I think I can do this by using the export/import feature to keep the data I need to transfer. That way I can get rid of all the if(this exists) run code nonesense. After that I need a good once over for my javascript. I think I did a good job but I'm sure there's lets that could be consts and other stuff that I'll be called out for on the review. Then I want to review the html files. I'm thinking I'll put the html that the JS puts in in the file, but comment it out, so it's easier to read, not sure yet though. Then I need to go over the css. This one needs a lot of work. I should go through and create classes that cover everything so I can combine them and keep DRYer code. I really don't want to but I also really don't want the reviewer to have to explain stuff I already know and just didn't do because of laziness. After that I can submit! I'll even have no more placeholder content as this is the last post I need to replace that! When I submit it, I will ask for a few things. First, I want to know how to make the pathname different than index.html. It can't be that complex right? Then I want to see if there's a better way to do my grid layout on my portfolio page. It's just not quite right. I also might change the background color on the pages, it looks weird with my portfolio images. Then I want to know if there's a way to make what I did with the hove effect on the portfolio items accessible, because I know it's not but :focus doesn't work. I have also just reaslised that portfolio is not mobile first. I will make it mobile first and work from there.",
+        image: "./images/cdc-cleaning.jpg",
+        alt: "A person mopping the floor of a house.",
         id: "9",
     },
 ]
