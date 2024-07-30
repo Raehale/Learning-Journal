@@ -1,0 +1,49 @@
+/****ABOUT ME****/
+.about-content {
+    margin: 1em 2em;
+}
+/***HEADER***/
+.about-header {
+    display: flex;
+    flex-direction: column;
+}
+/**IMAGE**/
+.about-img {
+    width: 180px;
+    height: auto;
+
+    border-radius: 50%;
+}
+
+/***MOBILITY***/
+@media (min-width: 768px){
+    /**ABOUT PAGE**/
+    /*HEADER*/
+    .about-header {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+
+        max-width: 1400px;
+
+        padding: 0 2em;
+        margin: auto;
+    }
+
+    .about-title {
+        margin-bottom: 0;
+    }
+
+    .about-text {
+        margin-top: 0;
+    }
+
+    /*CONTENT*/
+    .about-inner-content {
+        max-width: 80vw;
+        margin: 2em 10vw 0;
+    }
+}

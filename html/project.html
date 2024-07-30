@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>My Learning Journal</title>
-        <link rel="stylesheet" href="css/style.css" />
+        <title>My Learning Journal Project</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/project.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- roboto font -->
@@ -19,21 +20,18 @@
             <!-- header is rendered in js -->
         </header>
         <main>
-            <article class="selected-post-content" id="selectedPostContent">
-                <!-- loads the content of the post the user clicked -->
+            <article class="selected-project-content" id="selectedProjectContent">
+                <!-- loads the content of the project the user clicked -->
             </article>
             <div class="recent-posts">
-                <h2 class="recent-posts-header">Recent Posts</h2>
-                <div class="three-recent-posts posts" id="threeRecentPosts">
+                <h2 class="recent-projects-header">Recent Projects</h2>
+                <div class="three-recent-projects posts" id="threeRecentProjects">
                     <!-- loads the three most recent posts, not included the one loaded on the page -->
                 </div>
             </div>
         </main>
-        <footer>
-            <h4>My Learning Journal</h4>
-            Copyright © <span id="currentYear"></span>
-            <br /><a href="mailto:alyssarae98ha@gmail.com">alyssarae98ha@gmail.com</a>
+        <footer id="footer">
         </footer>
     </body>
-    <script src="index.js" type="module"></script>
+    <script src="../project.js" type="module"></script>
 </html>

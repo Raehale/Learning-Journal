@@ -1,0 +1,72 @@
+/***HERO SECTION***/
+.hero-header {
+    display: flex;
+
+    color: white;
+    font-family: "Source Sans 3", sans-serif;
+
+    /* background-image: set in js as most recent posts image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    min-height: 500px;
+
+    padding: 3em 0 0;
+}
+
+.hero-header:hover {
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+.hero-header-content {
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+
+    min-height: 500px;
+
+    padding: 3em;
+}
+
+.hero-date {
+    text-transform: uppercase;
+    grid-column: span 2;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin: 0;
+    grid-column: span 2;
+}
+
+.hero-content {
+    width: 1fr;
+    margin: 0;
+}
+
+/**VIEW MORE BUTTON**/
+button {
+    display: block;
+
+    font-size: 1.125rem;
+    font-weight: bold;
+
+    background-color: transparent;
+
+    border: none;
+    margin: 2.5em auto 0;
+
+    text-decoration: underline;
+}
+
+button:hover {
+    color: #777;
+    text-decoration: none;
+    cursor: pointer;
+}

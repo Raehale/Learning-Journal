@@ -1,0 +1,100 @@
+/****PROJECT PAGE****/
+/***SELECTED PROJECT***/
+.selected-project-content {
+    width: 80vw;
+    margin: 2em auto;
+}
+
+/**DATE**/
+.selected-post-date {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+/**TITLE**/
+.selected-post-title {
+    margin-top: .5em;
+}
+
+/**IMAGE**/
+.selected-project-img {
+    display: block;
+
+    width: 100%;
+
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+/**CONTENT**/
+.portfolio-body {
+    font-size: 1.125em;
+
+    margin-top: 2em;
+}
+
+/*TAGS*/
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 1em;            
+}
+
+.tag {
+    color: white;
+    font-size: .65em;
+
+    padding: .125em 1em;
+    border-radius: 50px;
+    margin: 1%;
+}
+
+.css-tag {
+    background-color: rgb(61, 15, 61);
+}
+
+.html-tag {
+    background-color: rgb(92, 22, 22);
+}
+
+.javascript-tag {
+    background-color: rgb(238, 253, 25);
+    color: black;
+}
+
+.app-tag {
+    background-color: rgb(36, 46, 129);
+}
+
+.website-tag {
+    background-color: rgb(129, 36, 98);
+}
+
+.wip-tag {
+    background-color: rgb(192, 71, 35);
+}
+
+.group-tag {
+    background-color: rgb(35, 182, 192);
+}
+
+.extension-tag {
+    background-color: rgb(35, 192, 127);
+    color: black;
+}
+
+/***MOBILITY***/
+@media (min-width: 768px){
+    /**SELECTED POST**/
+    .selected-project-content {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 1280px){
+    /**SELECTED POST**/
+    .selected-project-content {
+        width: 50vw;
+    }
+}
