@@ -95,6 +95,22 @@ export const postsArr = [
         alt: "A man sitting on a chair looking at his laptop with bewilderment.",
         id: "12",
     },
+    {
+        date: "July 29, 2024",
+        title: "Reviewed Changes",
+        content: "I finished making the changes to the learning journal that the reviewer suggested. It was not easy and I am so tired. I created separate files for all the js and css for each page. I also made the footer get set up in the footer so I can change it in one place instead of many if I want to. I separated so much code. I also learned one html file can have multiple css files. I made the transitions less jarring as well, evren though it kinda bummed me out. I know he's right but it was so fun to make. I did make it mobile first too which made the transitioning to desktop pretty easy. All and all, it's done and so am I. Now I will move on to the advanced javascript course. ",
+        image: "/chris-lawton-changing-leaves.jpg",
+        alt: "Seven leaves on a string changing colors through a gradient starting at green and ending in red.",
+        id: "13",
+    },
+    {
+        date: "July 31, 2024",
+        title: "Best Bank Spendings",
+        content: "I took on a task in the best bank group project today. It wasn't too hard. All I had to do was tie the accouts to the spending, so when you clicked a different account, you would get it's associated spendings. I just created a new function, and made it run when someone clicked each account button. I logged the event and grabbed the data attribute I added to them. Then, If there are spendings, I updated the html placed in the spendings category. If there are no spendings, they get the text you have no categories. It was pretty baic. I am seeing now that I left a console log so I'll have to remove that real quick. I also updated the hover effect I put on the spendings to only exist when you're hoving over it. Pretty simple changes. After taking care of that, I went on to do some Advanced Javascript.",
+        image: "/andre-taissin-piggy-bank.jpg",
+        alt: "A pink piggy bank with white dots on the floor with it's snout leaning on some coins.",
+        id: "14",
+    },
     // {
     //     date: "",
     //     title: "",
