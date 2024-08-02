@@ -111,6 +111,14 @@ export const postsArr = [
         alt: "A pink piggy bank with white dots on the floor with it's snout leaning on some coins.",
         id: "14",
     },
+    {
+        date: "August 1, 2024",
+        title: "The Map Method For Win",
+        content: "I spent today doing some advanced javascript. It was brutal. I sort of finished the video portion of the second seciton, Methods and Loops. I learned about for of, and for in and the difference between the two, although now I am blanking on what that is so I think I'll try to go back and rewatch those videos. I learned about a lot of methods, foreach, includes, map, join, filter, and reduce. I learned about others too, but they were mostly array methods that are less common to use. My senior dev says the most common methods for us to use are map and join. We touched on the for loop break and continue, which seem super interesting. I would love to see them used in the real world. The I leanred about string replace and replace all and how to use replace all with regex to get specific parts of a string. I was also able to touch on my regex skills a bit more and take some solid notes on them. Although they did say most devs use AI or just google regex questions, but when I used AI for their question the answer was wrong for some reason. I would realy like to understand it a good bit more. I did learn some of the basics. Like how you can end it in g to do global, otherwise it'll find the first and move on, even if you use replace all. Now I am working on the super challange. It looks brutal. I'm making a search form that serarching for a contact. Could be cool, I'm excited to figure it out!",
+        image: "/stephen-monroe-map.jpg",
+        alt: "A close up picture of a paper map.",
+        id: "15",
+    },
     // {
     //     date: "",
     //     title: "",
