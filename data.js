@@ -119,6 +119,14 @@ export const postsArr = [
         alt: "A close up picture of a paper map.",
         id: "15",
     },
+    {
+        date: "August 3, 2024",
+        title: "Women In Computer Science",
+        content: "I feel like I have gotten a bit of my spark back! My passion for coding! I have an idea to expand on a project I did for school. I haven't felt that passionate in a good while, since I edited twimba I think. I used to try to personalize every project, but I got tired. Reguardless, I am so excited! I was building this search field for class. Essencially, there's an array with a list of contacts. From the front end, it searches the array based off the users inputs. It's doing this by using loops and regex, which is actually kind of cool! I built a search engine! A tiny one but still, that's kinda cool. I made it to where if you type anything some responses show up. I am thinking of making those pop up in a little opaque drop down, maybe they can click and it'll auto fill? I don't know, lots of ideas! Bu tI am also changing the contacts to be women in computer science. I'm pretty sure there were like 52 or something that showed up on google. I don't know if that's just the max google will show or if it's the amount of women they think deserve to show up there, but I have decided I want to be one of them someday. Oh, and work at wikipedia, that's another new goal. But I am inputing a short summary of what they've done (thanks chatgpt), their name, birth/death day, and a link to their wikipedia. I also want to design it a little differently. I need to watch the refactoring video and refactor my code before I edit it though. I am kind of tired so I am going to call it a night tonight, but I am excited for tomorrows coding! I might let myself hop on early to code for fun. Oh also a sidenote, I turned the screenreader on today and had to run an update on it so I did. When I was uploading the update I noticed the bar made a noise, and when I closed the windows search it made a noise too. I think I want to see how to implement that, or if I even can, on the web. I think it's so cool!",
+        image: "/christina-wocintechchat-woman-coding.jpg",
+        alt: "Looking over a womans shoulder while she codes on her laptop and reaches for her phone.",
+        id: "16",
+    },
     // {
     //     date: "",
     //     title: "",
