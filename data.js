@@ -127,6 +127,14 @@ export const postsArr = [
         alt: "Looking over a womans shoulder while she codes on her laptop and reaches for her phone.",
         id: "16",
     },
+    {
+        date: "August 5, 2024",
+        title: "I Feel Accomplished",
+        content: "I studied for 7 hours today. That on top of 6 hours of work. I am totally beat but it was really fun and I learned a lot! A good chunk of it was review. I do feel like I understand the arrow function a good bit more now though! I completed two of the sections in the advanced javascript course. They were mostly review, but I feel like it was needed. I kinda forgot about most of them, like the rest parameter, function declarations, default parmeters. I also learned about short-circuiting. And I know I learned about this before because I have notes on it, but I completely forgot. It was so confusing. I did learn about new ones like Nullish Coalescing ?? and optional chaining .?. I can't think of a real world time to use these but if one happens I'm going to feel so good. I might watch those again though, the concept was pretty hard for me. I also showed Chris my search bar project and he suggested that I move the actionable code into the html file because that's how we do it. I will try to do that today while I cook dinner but no promises becuase I am wiped. Tomorrow I hope I come at this with the same fire. It feels good to have accomplished so much!",
+        image: "/ales-krivec-on-mountain.png",
+        alt: "A person standing on a very high mountain looking at the view of the sky and land below.",
+        id: "17",
+    },
     // {
     //     date: "",
     //     title: "",
@@ -368,6 +376,17 @@ export const projectsArr = [
         tags: ["Javascript", "App"],
         size: ["box"],
         date: "July 27, 2024",
+    },
+    {
+        name: "Historic Women in Computer Science",
+        github: "https://github.com/Raehale/Historic-Woman-In-Comp-Sci-Search",
+        link: "https://historic-women-in-comp-sci-search-rh.netlify.app/",
+        screenshot: "/women-search.jpg",
+        description: "A site with a search function where you can search through a list of the women who have had a historically significant impact on computer science.",
+        id: 22,
+        tags: ["Javascript", "App"],
+        size: ["wide"],
+        date: "August 3, 2024",
     },
     // {
     //     name: "",
