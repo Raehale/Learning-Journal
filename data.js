@@ -135,6 +135,14 @@ export const postsArr = [
         alt: "A person standing on a very high mountain looking at the view of the sky and land below.",
         id: "17",
     },
+    {
+        date: "August 7, 2024",
+        title: "I'm Confused",
+        content: "Today I started a new section of the advanced javascript course called 'creating custom objects'. It made sense when he was talking about creating objects in one of three ways. I like classes the best they make sense. The constructor in a class doesn't really make sense to me yet but hopefully it will soon. Then I learned about apply and call methods. They made sense, just adding an object to a function somewhat as a parameter as well as the actual parameter. Apply is the same but with the parameter in an array. Super straight forward. Then out of no where it made no sense. He started talking about inheritance, which as a concept I do understand. But then he mentioned the prototype chain, which is just the order things are inherited by objects, but still who named that? It's way too scary sounding! Then he talked about polymorphism, which is the concept that an object can override inheritance for it's needs. Again I get it, but it's a touch over my head. I may have to rewatch the video tomorrow. These concepts are a bit too hard for me. Overall today was pretty successful though. I did some full stack work at work, and was super proud! I am getting better at using and understanding DataTables. I also finally added my notes to the progress tracker Micha made, of course now they are out of date since I just added mroe notes. Overall, successful and tiring day!",
+        image: "/riccardo-farinazzo-maze.jpg",
+        alt: "A building in the middle of a green bush maze with trees in the background.",
+        id: "18",
+    },
     // {
     //     date: "",
     //     title: "",
