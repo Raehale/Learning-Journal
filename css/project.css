@@ -20,6 +20,8 @@
 .selected-project-img {
     display: block;
 
+    width: 100%;
+
     margin: 0 auto;
     border-radius: 4px;
 }
