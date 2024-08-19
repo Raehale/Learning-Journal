@@ -415,6 +415,17 @@ export const projectsArr = [
         size: ["normal"],
         date: "August 17, 2024",
     },
+    {
+        name: "Colors Generator",
+        github: "https://github.com/Raehale/generate-random-colors",
+        link: "https://generate-six-random-colors.netlify.app/",
+        screenshot: "/color-generator.jpg",
+        description: "An application that randomly generates six unique colors on demand that you can lock and copy.",
+        id: 24,
+        tags: ["HTML", "CSS", "Javascript", "App"],
+        size: ["wide"],
+        date: "August 18, 2024",
+    },
     // {
     //     name: "",
     //     github: "",
