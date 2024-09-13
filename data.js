@@ -426,6 +426,17 @@ export const projectsArr = [
         size: ["wide"],
         date: "August 18, 2024",
     },
+    {
+        name: "BoredBot",
+        github: "https://github.com/Raehale/boredbot",
+        link: "https://task-generator-boredbot.netlify.app/",
+        screenshot: "/boredbot.jpg",
+        description: "An application that randomly generates a task for the user to do using an API.",
+        id: 25,
+        tags: ["Javascript", "CSS", "App"],
+        size: ["wide"],
+        date: "August 25, 2024",
+    },
     // {
     //     name: "",
     //     github: "",
