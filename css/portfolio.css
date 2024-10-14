@@ -133,6 +133,11 @@
     color: black;
 }
 
+.api-tag {
+    background-color: rgb(192, 35, 35);
+    color: white;
+}
+
 
 /***MOBILITY***/
 @media (min-width: 768px){
