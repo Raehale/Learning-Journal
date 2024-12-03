@@ -167,6 +167,14 @@ export const postsArr = [
         alt: "The editor view of scrimbas javascriptmas day 1, showing the instructions on the task and a small view of the project.",
         id: "21",
     },
+    {
+        date: "December 2, 2024",
+        title: "JavaScriptmas Day 2",
+        content: "For JavaScriptmas Day 2 the challenge was to take a very ugly advent calendar UI and make it look good. I changed the font, chose better colors, added some emojis, and added some modal functionality showing new code themed jokes for every day in december until the 25th. The coding itself wasn't really the challenge, it was mostly just getting a feel for UI. It also wasn't very JavaScript centric, however I did use JavaScript to create the popup, as well as render the correct data based on what day is selected. I did this by adding an id in the data that corisponds with the associated date. So when someone clicks the date, the date number is taken as a parameter and using a forEach I itterated through the data till it found the correct id. Once it does it grabs that objects content and places it in the associated fields. I also used JavaScript to create a simple accordion, which is just toggling classes. However, the accordion does have a bug! If you open a modal and then open an accordion, then close the modal and open another one, you will get an open accordion. This could be fixed with resetting the classes, but I'd have to write some if else logic and I already spent so much time on this task, I figured it was best to just move on. Can't wait for day three!",
+        image: "/javascriptmas-day-2.png",
+        alt: "The editor view of Scrimbas javascriptmas day 2 challenge, showing the code editor and the browser view.",
+        id: "22",
+    },
     // {
     //     date: "",
     //     title: "",
