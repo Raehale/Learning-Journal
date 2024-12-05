@@ -178,7 +178,174 @@ export const postsArr = [
     {
         date: "December 3, 2024",
         title: "JavaScriptmas Day 3 - Santa's Emoji Hack",
-        content: "The third JavaScriptmas challenge was pretty simple! It was just replacing emojis/emoji shortcodes with that were negative with ones that were positive. So if someone typed :angry: instead of getting 😠 they would get 🎁. The associated phrases (angry, thumbsdown, man_facepalming, cry, and puke). Were all put in an object as keys with the replacing emojis (🎁, 👏, 🎅, 😄, and 🤩) as their values. I entered the emojifyWord function that is accepting the word as the paremeter and created an if statement checking if the first and last characters were : by using word.charAt(0) to get the first character and word.slice(-1) to get the last character. If both of those equal :, then I removed the :s from the phrase by using slice like word.slice(1, -1). I then used a for of loop to itterate through the keys array by using Object.keys(hackedEmojis) as the of in the for of. Then I checked if the key was equal to the word that I grabbed without the :. If it is I returned the value in the object at the associated key we are currently at in the for. If none of those are true it will exit the for loop and return the word. Then if someone put in a phrase I went in to the emojifyPhrase function that accepts a parameter of phrase. In this one, you have to check and see if any of the values surrounded by :: are included in the phrase. I did this by using another for of and itterating through Object.keys(hackedEmojis) again. Then I defined the potential emoji by surrounding the given key in ::s. I then used the replace function on the phrase to replace the potential emoji phrase (like :thumbsdown:) with the associated happy emoji and returned that. If the return is not met, it will exit the for and return the whole phrase. For the stretch goal, I had to do essensially the same thing but listen for if they were adding any of the negative emojis directly. So if the user put 🤮 in they would get 🤩 out. I did this by creating another object with the negative emojis as the keys and the positive ones as the values. Then within the emojifyWord function I added a for of where I itterate through the key value pairs in the hackedEmojis2 object I created. There I checked if the word was equal to any emoji and if it was, I returned the associated happy emoji. If this is false it will enter the previously created if, checking for a :word:. For the emojifyPhrase function, I added another for of itterating through the hackedEmojis2 keys, then checked if the phrase included the negative emoji. If it does, I used the replace function to replace the negative emoji with it's associated possitive value. That was it! Pretty simple and pretty fun. Can't wait for tomorrows!",
+        content:   /*HTML*/`<h2>JavaScript Challenge</h2>
+                            <p>The third JavaScriptmas challenge was pretty simple!</p>
+
+                            <span>
+                                It was just replacing <b>emojis</b> (🐀) and <b>emoji shortcodes</b> (<b>:rat:</b>) that were 
+                                <i>"negative"</i> 
+                                <ul class="unordered_ordered_list">(
+                                    <li><i>"😠"</i></li>,
+                                    <li><i>"👎"</i></li>, 
+                                    <li><i>"🤦‍♂️"</i></li>, 
+                                    <li><i>"😭"</i></li>, 
+                                    <li><i>"🤮"</i></li>
+                                )</ul> with ones that were <i>"positive"</i> 
+                                <ul class="unordered_ordered_list">(
+                                    <li><i>"🎁"</i></li>, 
+                                    <li><i>"👏"</i></li>, 
+                                    <li><i>"🎅"</i></li>, 
+                                    <li><i>"😄"</i></li>, 
+                                    <li><i>"🤩"</i></li>
+                                )</ul>. So if someone typed 
+                                <em>":angry:"</em> instead of getting <i>"😠"</i> they would get <i>"🎁"</i>. The associated phrases 
+                                <ul class="unordered_ordered_list">(
+                                    <li><b>:angry:</b></li>, 
+                                    <li><b>:thumbsdown:</b></li>, 
+                                    <li><b>:man_facepalming:</b></li>, 
+                                    <li><b>:cry:</b></li>, and 
+                                    <li><b>:puke:</b></li>
+                                )</ul>. 
+                                Were all put in an object{} as keys with the replacing <i>"emojis"</i> 
+                                <ul class="unordered_ordered_list">(
+                                    <li><i>"🎁"</i></li>, 
+                                    <li><i>"👏"</i></li>, 
+                                    <li><i>"🎅"</i></li>, 
+                                    <li><i>"😄"</i></li>, and 
+                                    <li><i>"🤩"</i></li>
+                                )</ul> as their values.
+                            </span>
+
+                            <h3>A Submitted Word Returns an Emoji</h3>
+                            <p>
+                                I entered the <b>emojifyWord(word){}</b> function that is accepting <i>"word"</i> as the parameter and 
+                                created an if() statement, checking if the first and last characters were <i>":"</i> by using 
+                                <b>word.charAt(0)</b> to get the first character of the string, and <b>word.slice(-1)</b> to return only 
+                                the last character of the string. 
+                                (
+                                    <b>
+                                        if (word.charAt(0) === <i>":"</i> && word.slice(1, -1) === <i>":"</i>){
+                                            <span class="function_comment">
+                                                //return words with emojis instead of associated text
+                                            </span>
+                                        }
+                                    </b>
+                                ) 
+                                If both of those equal <i>":"</i>, then I removed the <i>":"<i>s from the phrase by using the <b>.slice()</b> 
+                                function. 
+                                (Like <b>
+                                    word.slice(1, -1)
+                                </b>). 
+                                I then used a for(of) loop to itterate through the <i>"keys"</i> array by using 
+                                <b>
+                                    Object.keys(hackedEmojisFromEmojisObj)
+                                </b> as the of in the for 
+                                <b>
+                                    for(const badEmoji of Object.keys(hackedEmojisToEmojisArr)){
+                                        <span class="function_comment">
+                                            //
+                                        </span>
+                                    }
+                                </b>. Then I checked if the <i>"key"</i> was equal to the <i>"word"</i> that I grabbed without the 
+                                <i>":"</i>.
+                                If it is I returned the value
+                                (<b>
+                                    return goodEmoji;
+                                </b>)
+                                in the object at the associated <i>"key"</i> we are currently at in the for(of) loop 
+                                (<b>
+                                    if (badEmoji === word.slice(1, 1)) {
+                                        <span class="function_comment">
+                                            //returning <i>"emoji"</i> instead of <i>":word:"</i>
+                                        </span>
+                                    }
+                                </b>). 
+                                If none of those are <b>true</b> it will exit the 
+                                <b>
+                                    for (const badEmoji of Object.keys(hackedEmojisFromEmojisObj)) {
+                                        <span class="function_comment">
+                                            //returning <i>emoji</i> instead of <i>":word:"</i>
+                                        </span>
+                                    }
+                                </b>
+                                loop after never reaching the <b>return</b> and return the <b>"word"</b>.
+                            </p> 
+                                
+                            <h3>A Submitted Phrase Returns a Phrase with an Emoji</h3>
+                            <p>
+                                Then if someone put in a <i>"phrase"</i> I went in to the <b>emojifyPhrase(){}</b> function that accepts a 
+                                parameter of <i>"phrase"</i>. In this function, you have to check and see if any of the <i>"values"</i> 
+                                surrounded by <i>":"</i>...<i>":"</i> are included in the <i>"phrase"</i>. I did this by using another 
+                                (<b>
+                                    for(const text of Object.keys(hackedEmojisFromTextObj) ) {
+                                        //returns the phrase with an <i>"emoji"</i> instead of <i>":text:"</i>
+                                    }
+                                </b>)
+                                and itterating through <b>Object.keys(hackedEmojisFromTextObj){}</b> again. Then I defined the potential 
+                                <i>"emoji"</i> by surrounding the given key in <i>":"</i>...<i>":"</i>s. I then used the <b>.replace()</b> 
+                                function on the <i>"phrase"</i> to replace with the potential <i>"emoji phrase"</i> (<b>like 
+                                <i>":thumbsdown:"</i></b>) with the associated <i>"happy emoji"</i> (<i>"👏"</i>) and <b>return</b>ed that
+                                <i>"string"</i>. If the return is not reached, it will exit the for loop and return the whole phrase as 
+                                it was entered.
+                            </p>
+                                
+                            <h3>Stretch Goals</h3>
+                            <h4>A Submitted Emoji Returns an Emoji</h4>
+                            <p>
+                                I had to do essensially the same thing but listen for if they were adding any of the 
+                                <i>"negative emojis"</i> directly. So if the user put <b>"🤮"</b> in they would get <b>"🤩"</b> out.
+                                I did this by creating another <b>object{}</b> with the <i>"negative emojis"</i> as the <em>"keys"</em> 
+                                and the <i>"positive emojis" as the <em>"values"</em>. 
+                                Then within the <b>emojifyWord(word){}</b> function I added a for(of) 
+                                (<b>
+                                    for (const badEmoji of Object.keys(hackedEmojisFromEmojisObj)) {
+                                        //returns the <i>"positive emoji"</i> value of the <i>"negative emoji"</i> key
+                                    }
+                                </b>), 
+                                where I itterate through the <em>key: value</em> pairs in the <b>hackedEmojisFromEmojisObj{}</b> object 
+                                I created. There, I checked if the <i>"word"</i> was equal to any <i>"emoji"</i> 
+                                (<b>if (word === badEmoji)(){}</b>) and if it was <b>true</b>, I returned the associated <i>"positive 
+                                emoji"</i>. If this is <b>false</b> it will enter the previously created if statement 
+                                (<b>
+                                    if ((word.charAt(0) && word.slice(-1)) === ":") {
+                                        //returns the positive emoji value of the negative text key
+                                    }
+                                </b>), 
+                                checking for a <i>":word:"</i>".
+                            </p>
+
+                            <h4>A Submitted Phrase Returns a Phrase with  New Emoji</h4>
+                            <p>
+                                For the <b>emojifyPhrase()</b> function, I added another for of, 
+                                (<b>
+                                    for (const badEmoji of Object.keys(hackedEmojisFromEmojisObj)) {
+                                        //returns the phrase with the good emoji replacing the bad one
+                                    }
+                                </b>),
+                                itterating through the <b>hackedEmojisFromEmojisObj{}</b> keys, then checked if the <i>"phrase"</i> 
+                                included the <i>"negative emoji"</i>. If it does, I used the <b>.replace()</b> function to replace the 
+                                <i>"negative emoji"</i> key with it's associated <i>"possitive emoji"</i> value.
+                            </p> 
+
+                            <p>
+                                The reason I put the emoji input checker before the text input checker is because the emoji input would
+                                itterate through the text checker fine.
+                            </p>
+
+                            <p>That was it! Pretty simple and pretty fun. Can't wait for tomorrows!</p>
+
+                            <p>
+                                Try out <a href="https://scrimba.com/javascriptmas-c0javascriptmas/~02zu" target="_blank">
+                                    Scrimba's third JavaScriptmas challenge here
+                                </a>!
+                            </p>
+
+                            <p>
+                                Check out <a href="https://scrimba.com/javascriptmas-c0javascriptmas/~02zu/s0gu6o1d3j/head" target="_blank">
+                                    my solution to Scrimba's third JavaScriptmas challenge here
+                                </a>!
+                            </p>
+            `,
         image: "/javascriptmas-day-3.png",
         alt: "The editor view of Scrimbas javascriptmas day 2 challenge, showing the code editor and the browser view which displays JavaScriptmas 2024 in black text.",
         id: "23",
