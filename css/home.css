@@ -50,6 +50,24 @@
     margin: 0;
 }
 
+/*text content*/
+.unordered_ordered_list {
+    display: inline-block;
+    list-style-type: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.unordered_ordered_list li {
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+.unordered_ordered_list li:first-child {
+    margin-left: 0;
+}
+
 /**VIEW MORE BUTTON**/
 button {
     display: block;

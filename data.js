@@ -200,10 +200,10 @@ export const postsArr = [
                                 )</ul>. So if someone typed 
                                 <em>":angry:"</em> instead of getting <i>"😠"</i> they would get <i>"🎁"</i>. The associated phrases 
                                 <ul class="unordered_ordered_list">(
-                                    <li><b>:angry:</b></li>, 
-                                    <li><b>:thumbsdown:</b></li>, 
-                                    <li><b>:man_facepalming:</b></li>, 
-                                    <li><b>:cry:</b></li>, and 
+                                    <li><b>:angry:</b></li>,
+                                    <li><b>:thumbsdown:</b></li>,
+                                    <li><b>:man_facepalming:</b></li>,
+                                    <li><b>:cry:</b></li>, and
                                     <li><b>:puke:</b></li>
                                 )</ul>. 
                                 Were all put in an object{} as keys with the replacing <i>"emojis"</i> 
